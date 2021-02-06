@@ -1,0 +1,3 @@
+Bash Scripting: Bash is one of the most frequently used Unix Shell Scripting and provides good support. Bash Scripting and Shell Scripting languages support thousands of Linux systems around the world. As well as, it is available for Windows and Mac Operating Systems too.
+Bash Scripting is a POSIX-compliant shell but is available with several extensions. Though Bash Scripting is an implementation of the POSIX.2 shell specification, as well as there, are areas where the usual default behavior differs.
+The command shell programming and shell scripting language of Bash is used to automate the process  number of Linux Servers around the world. 
