@@ -1,5 +1,5 @@
 #!/bin/bash
-echo {a..z}{a..z} -l
+printf "%s\n" {{a..n}{a..z},{o{a..n},o{p..z}},{p..z}{a..z}}
 
 
 
