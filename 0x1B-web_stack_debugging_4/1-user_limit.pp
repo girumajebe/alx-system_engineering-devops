@@ -1,13 +1,12 @@
-# Change the limit on number of open files for user Holberton to sys max
-exec {'hard limit':
-  command => 'sed -r -i "s/(holberton hard nofile) [0-9]+/\1 10240/" /etc/security/limits.conf',
-    path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
-      onlyif  => 'test -f /etc/security/limits.conf',
-      }
+# enable holberton user to open a file without error
 
-      exec {'soft limit':
-        command => 'sed -r -i "s/(holberton soft nofile) [0-9]+/\1 8000/" /etc/security/limits.conf',
-	  path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
-	    onlyif  => 'test -f /etc/security/limits.conf',
-	      require => Exec['hard limit'],
-	      }
+# Increase hard file limit for Holberton user.
+exec { 'increase hard file limit':
+        command => "/bin/sed -i /etc/security/limits.conf -e 's/hard nofile [0-9]\+/hard nofile 97816/g'"
+	}
+
+	# Increase soft file limit for Holberton user
+	exec { 'increase soft file limit':
+	        command => "/bin/sed -i /etc/security/limits.conf -e 's/soft nofile [0-9]\+/soft nofile 97816/g'"
+		}
+		
